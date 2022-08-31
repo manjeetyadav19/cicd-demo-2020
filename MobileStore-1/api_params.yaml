@@ -1,0 +1,18 @@
+environments:
+  - name: dev
+    endpoints:
+      production:
+        url: https://jsonplaceholder.typicode.com
+      sandbox:
+        url: https://jsonplaceholder.typicode.com
+  - name: prod
+    endpoints:
+      production:
+        url: https://jsonplaceholder.typicode.com
+      sandbox:
+        url: https://jsonplaceholder.typicode.com
+
+deploy:
+  import:
+    update: true
+    preserveProvider: true 

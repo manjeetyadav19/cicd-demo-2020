@@ -1,0 +1,68 @@
+openapi: 3.0.1
+info:
+  title: MobileStore
+  version: "1"
+servers:
+ -
+  url: /
+security:
+ -
+  default: []
+paths:
+  /users:
+    get:
+      parameters: []
+      responses:
+        "200":
+          description: ok
+      security:
+       -
+        default: []
+      x-auth-type: Application & Application User
+      x-throttling-tier: Unlimited
+      x-wso2-application-security:
+        security-types:
+         - oauth2
+        optional: false
+components:
+  securitySchemes:
+    default:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://test.com
+          scopes: {}
+x-wso2-auth-header: Authorization
+x-wso2-cors:
+  corsConfigurationEnabled: true
+  accessControlAllowOrigins:
+   - '*'
+  accessControlAllowCredentials: false
+  accessControlAllowHeaders:
+   - authorization
+   - Access-Control-Allow-Origin
+   - Content-Type
+   - SOAPAction
+   - apikey
+   - Internal-Key
+  accessControlAllowMethods:
+   - GET
+   - PUT
+   - POST
+   - DELETE
+   - PATCH
+   - OPTIONS
+x-wso2-production-endpoints:
+  urls:
+   - https://jsonplaceholder.typicode.com
+  type: http
+x-wso2-sandbox-endpoints:
+  urls:
+   - https://jsonplaceholder.typicode.com
+  type: http
+x-wso2-basePath: /users/1
+x-wso2-transports:
+ - https
+x-wso2-response-cache:
+  enabled: false
+  cacheTimeoutInSeconds: 300
