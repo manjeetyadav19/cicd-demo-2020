@@ -3,6 +3,10 @@ pipeline {
        githubPush()
     }
     agent any
+    environment { 
+        PATH = "/root/apictl:$PATH"
+        ADMIN = credentials('admin')
+    }
     stages {
 
         stage('Setup Environment for APICTL') {
