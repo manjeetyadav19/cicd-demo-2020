@@ -7,13 +7,6 @@ pipeline {
         PATH = "/root/apictl:$PATH"
         ADMIN = credentials('admin_user')
     }
-    options {
-        buildDiscarder logRotator( 
-                    daysToKeepStr: '16', 
-                    numToKeepStr: '10'
-            )
-    }
-
     stages {
 
         stage('Setup Environment for APICTL') {
@@ -21,17 +14,8 @@ pipeline {
                 sh """#!/bin/bash
                 ENVCOUNT=\$(apictl list envs --format {{.}} | wc -l)
                 if [ "\$ENVCOUNT" == "0" ]; then
-                    apictl add-env -e prod --apim https://prod.mycorp.com:9443
+                    apictl add-env -e prod --apim https://34.121.158.77:9443
                 fi
-                """
-            }
-        }
-
-        stage('Deploy APIs To "Prod" Environment') {
-            steps {
-                sh """
-                apictl login prod -u \$ADMIN_USR -p \$ADMIN_PSW -k
-                apictl vcs deploy -e prod
                 """
             }
         }
