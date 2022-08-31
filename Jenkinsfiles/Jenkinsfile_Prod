@@ -3,7 +3,6 @@ pipeline {
        githubPush()
     }
     agent any
-    }
     environment { 
         PATH = "/root/apictl:$PATH"
         ADMIN = credentials('admin_user')
