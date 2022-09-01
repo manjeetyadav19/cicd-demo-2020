@@ -1,0 +1,56 @@
+type: application
+version: v4.1.0
+data:
+  applicationInfo:
+    applicationId: 9e03ea8f-22d0-4eb8-b466-33ed0548eb64
+    name: MyStore
+    throttlingPolicy: 10PerMin
+    description: ""
+    tokenType: JWT
+    status: APPROVED
+    groups: []
+    subscriptionCount: 1
+    keys:
+     -
+      keyMappingId: 3f915193-8b98-4b01-8fcd-1227bbfa73be
+      keyManager: Resident Key Manager
+      consumerKey: 5ZSNI_SSIXN0f88jfu6vPKkZebca
+      consumerSecret: eXRxRUx1TkNhM0tQaEF1b1BERHUwb0V1QmdJYQ==
+      supportedGrantTypes:
+       - password
+       - client_credentials
+       - refresh_token
+       - urn:ietf:params:oauth:grant-type:saml2-bearer
+       - urn:ietf:params:oauth:grant-type:jwt-bearer
+       - iwa:ntlm
+      callbackUrl: ""
+      keyState: COMPLETED
+      keyType: PRODUCTION
+      mode: CREATED
+      token:
+        tokenScopes: []
+        validityTime: 0
+      additionalProperties:
+        id_token_expiry_time: 3600
+        application_access_token_expiry_time: 3600
+        user_access_token_expiry_time: 3600
+        bypassClientCredentials: false
+        pkceMandatory: false
+        pkceSupportPlain: false
+        refresh_token_expiry_time: 86400
+    attributes: {}
+    subscriptionScopes: []
+    owner: admin
+  subscribedAPIs:
+   -
+    apiId:
+      providerName: admin
+      apiName: MobileStore
+      version: "1"
+      uuid: d0ed9529-5b2f-4f0e-82f1-b9b8a245c617
+      id: 0
+    subscriber:
+      name: admin
+      id: 1
+      tenantId: 0
+    throttlingPolicy: Unlimited

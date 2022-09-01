@@ -1,0 +1,8 @@
+deploy:
+  import:
+    preserveOwner: true
+    rotateRevision: false
+    skipKeys: true
+    update: true
+name: MyStore
+owner: admin
